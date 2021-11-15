@@ -1,0 +1,23 @@
+<h1>Storage Locations near you</h1>
+<br>
+<ul>
+  <% @locations.each do |location| %>
+    <li class="card-category">
+      <h3><%= location.name %></h3>
+      <h5><%= location.property_type %></h5>
+      <br>
+      <p>Storage Location Address: <%= location.location_address %></p>
+      <br>
+      <p>Storage Description: <%= location.description %></p>
+      <br>
+      <p>Availability: <% if location.availability == true %>
+        <%= "available" %>
+      <% else %>
+        <%= "not available" %>
+      <% end %></p>
+      <p>Price per hour($): <%= location.price %></p>
+    </li>
+    <% end %>
+  </ul>
+
+<%= link_to "List a new storage location", new_location_path %>
