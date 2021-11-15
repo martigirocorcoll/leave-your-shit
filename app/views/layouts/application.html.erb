@@ -32,15 +32,15 @@
           <a class="my-link" href="#">Publish a storage</a>
         </li>
         <li class="nav-item">
-          <a class="my-link" href="#">Sign in</a>
+          <%= link_to "Sign in", new_user_session_path, class: "my-link"%>
           <%# Hide above when they're logged in %>
         </li>
         <%# Hide below when they're not logged in %>
         <li class="nav-item dropdown">
-          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier"/>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">See my dashboard (optional)</a>
-            <a class="dropdown-item" href="#">Sign out</a>
+            <%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
           </div>
         </li>
       </ul>
