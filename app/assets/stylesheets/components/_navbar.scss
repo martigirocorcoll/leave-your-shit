@@ -1,6 +1,18 @@
+$rose: #f3d5ce;
+$lightblue: #91d1d9;
+$brightblue: #1cceca;
+$darkblue: #0542F1;
+$black: #222222;
+
+
+
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $lightblue;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +21,30 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.dropdown img {
+  box-shadow: 1px 1px 3px $black;
+  transition: 0.5s;
+  &:hover{
+    box-shadow: none;
+  }
+}
+
+
+
+
+.my-link{
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  padding: 20px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  &:hover {
+    text-decoration: none;
+    color: $darkblue;
+  }
 }
