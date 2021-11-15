@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2 class="text-center">Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -24,11 +24,11 @@
                 autofocus: true,
                 input_html: { autocomplete: "phone number" }%>
     <%= f.input :seller_type,
+                collection: ["Undefined", "Professional", "Personal"],
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "phone number" }%>
   </div>
-
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
