@@ -31,6 +31,7 @@
               <%= "not available" %>
             <% end %></p>
             <p>Price per hour($): <%= location.price %></p>
+            <%= link_to "destroy", location_path(location), method: :delete, data: { confirm: "Are you sure you want to delete this location?" }, class: "btn btn-flat"  %>
           </li>
 
           <div class="storage-container">

@@ -21,6 +21,15 @@ authorize @location
     end
 end
 
+def destroy
+  @location = Location.find(params[:id])
+  authorize @location
+   if @location.destroy
+      redirect_to locations_path
+  end
+end
+
+
 private
 
   def location_params
