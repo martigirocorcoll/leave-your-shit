@@ -5,6 +5,7 @@ class LocationPolicy < ApplicationPolicy
     end
   end
 
+
   def create?
     return true
   end
