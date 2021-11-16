@@ -20,7 +20,7 @@ end
 private
 
   def location_params
-    params.require(:location).permit(:name, :photo, :location_address, :description, :availability, :price, :property_type)
+    params.require(:location).permit(:name, :location_address, :description, :availability, :price, :property_type, photo: [])
   end
 
 end
