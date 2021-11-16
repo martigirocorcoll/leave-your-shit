@@ -1,4 +1,5 @@
-<div class="text-center pt-3 pb-3">
+<div class="d-flex space-around pt-3 pb-3">
+  <%= link_to "+ Add a storage location", new_location_path, class: "btn btn-secondary"%>
   <h1>Storage Locations near you</h1>
 </div>
 <div class="body-page">
@@ -23,7 +24,6 @@
           </li>
         <% end %>
       </ul>
-      <%= link_to "List a new storage location", new_location_path %>
     </div>
   </div>
   <div>
