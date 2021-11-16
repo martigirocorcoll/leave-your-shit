@@ -9,14 +9,14 @@
   </div>
 </div>
 <div class="body-page">
-  <div class="cards">
+  <div class="cards-index">
     <% @locations.each do |location| %>
       <div class="d-flex storage-container">
         <div>
           <% if location.photo.attached? %>
             <%= cl_image_tag location.photo.key, height: 200, width: 250, crop: :fill, class:"miniphoto" %>
           <% else %>
-            <img src="https://source.unsplash.com/random/250x200" alt="photo">
+            <img src="https://source.unsplash.com/random/250x200" alt="photo" class="miniphoto">
           <% end %>
         </div>
         <div class= "description">
