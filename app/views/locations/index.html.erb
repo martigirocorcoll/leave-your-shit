@@ -1,5 +1,10 @@
-<div class="text-center pt-3 pb-3">
-  <h1>Storage Locations near you</h1>
+<div class="d-flex justify-content-around pt-3 pb-3">
+  <div>
+    <%= link_to "Create new storage here", new_location_path, class: "btn btn-secondary"%>
+  </div>
+  <div>
+    <h1>Storage Locations near you</h1>
+  </div>
 </div>
 <div class="body-page">
   <div class="cards">
@@ -27,9 +32,40 @@
             <% end %></p>
             <p>Price per hour($): <%= location.price %></p>
           </li>
+
+          <div class="storage-container">
+            <div class = "photo">
+              <img src="https://source.unsplash.com/random/150x200" alt="photo">
+            </div>
+            <div class= "description">
+              <%= location.location_address %>
+              <h3><%= location.name %></h3>
+              <%= location.description %>
+              <p>Availability: <% if location.availability == true %>
+                <%= "available" %>
+              <% else %>
+                <%= "not available" %>
+              <% end %></p>
+            <h4>Price per hour($): <%= location.price %></h4>
+            </div>
+          </div>
         <% end %>
+          <div class="d-flex storage-container">
+            <div class = "photo">
+              <img src="https://source.unsplash.com/random/150x200" alt="photo">
+            </div>
+            <div class= "description">
+              <%= "Barcelona,Compte Urgel 147  "%>
+              <h3><%= "Cozy place for your bags" %></h3>
+              <%= "añsdjnfcoaksdmfñlkasdjflkñjñlkdsnñlaksdnvjnvkjdnvkjansdvjan" %>
+              <p>Availability: <% if true == true %>
+                <%= "available" %>
+              <% else %>
+                <%= "not available" %>
+              <% end %></p>
+            <h4>Price per hour($): <%= 2 %></h4>
+          </div>
       </ul>
-      <%= link_to "List a new storage location", new_location_path %>
     </div>
   </div>
   <div>
