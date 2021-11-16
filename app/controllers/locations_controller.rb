@@ -21,6 +21,14 @@ authorize @location
     end
 end
 
+def destroy
+  @location = Location.find(params[:id])
+  authorize @location
+   if @location.destroy
+      redirect_to locations_path
+  end
+end
+
 def show
   @location = Location.find(params[:id])
   @booking = Booking.new
