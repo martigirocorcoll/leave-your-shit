@@ -13,13 +13,26 @@
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
+
 .cards-index {
-  margin: 15px;
+  margin-bottom: 25px;
+  margin-right: 15px;
+  margin-left: 15px;
   flex-grow: 1;
-  display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
+  width: 50%;
 }
+
+
+.body-page{
+  display: flex;
+}
+
+.map {
+  width: 50%;
+}
+
 @media(max-width: 992px) {
   .cards-index {
     grid-template-columns: 1fr 1fr;
@@ -30,8 +43,17 @@
   .cards-index {
     grid-template-columns: 1fr;
   }
+
 }
 
-.body-page{
-  display: flex;
+.storage-container{
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius:10px;
+}
+
+.miniphoto{
+  margin-right: 25px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
