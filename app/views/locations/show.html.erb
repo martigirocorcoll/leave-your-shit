@@ -2,7 +2,7 @@
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1680&q=80);">
   <div class="container-show">
     <div>
-      <h1 id=""> <strong><%=  @location.name  %></strong></h1>
+      <h1 id="title-show"> <strong><%=  @location.name  %></strong></h1>
 
     </div>
   </div>
@@ -12,7 +12,9 @@
     <div class="card-body-show">
       <h5><strong>Details</strong></h5>
       <hr>
-      <p>Property type <strong><%= @location.property_type %></strong></p>
+      <strong>Property</strong>
+      <p><%= @location.property_type.capitalize %></p>
+      <strong>Description</strong>
       <p class="card-text"><%= @location.description %></p>
     </div>
 
@@ -20,6 +22,9 @@
       <h5><strong>Location</strong></h5>
       <hr>
       <p class="card-title"><%= @location.location_address %></p>
+      <div>
+        <img class="img-card-show" src="https://s1.eestatic.com/2017/10/11/social/la_jungla_-_social_253487245_50033618_1706x960.jpg" alt="">
+      </div>
     </div>
   </div>
 
@@ -27,13 +32,18 @@
   <div class="container-booking-card">
     <div class="booking-card" >
        <h3 class="card-price"> <strong>€ <%= @location.price%></strong></h3><p>/hour</p>
-       <form action="">
+       <%# <form action="">
           <p>Insert you dates</p>
           <input type="text">
-       </form>
-       <a href="#" class="btn btn-primary">Instant Book</a>
+       </form> %>
+       <%= simple_form_for [@location, @booking] do |f| %>
+        <%= f.input :start_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
+        <%= f.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
+        <%= f.submit class:'btn btn-primary'%>
+        <% end %>
     </div>
     <div class="booking-card-avatar">
+     <p>Hosted by "PLACEHOLDER USER-NAME" </p>
     </div>
   </div>
 </div>
