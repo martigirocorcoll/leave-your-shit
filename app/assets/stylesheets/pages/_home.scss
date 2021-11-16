@@ -31,7 +31,8 @@ text-align: center;
   align-items: center;
   justify-content: space-evenly;
   list-style-type: none;
-  padding-bottom: 30px;
+  padding-bottom: 100px;
+  padding-left: 0;
 }
 
 .form-home {
@@ -42,14 +43,41 @@ text-align: center;
 
 .card {
   border-radius: 10px;
+  border-color: rgb(194, 194, 194);
+  box-shadow:  0 0 15px rgba(0,0,0,0.2);
+  transition: 0.8s;
+  &:hover{
+    background-color: #91D1D9;
+    box-shadow:  0 0 15px rgba(0,0,0,0.4);
+    top: -5px;
+  }
 }
 
 .number-home {
   color: #0542F1;
 }
 
-#title-3 {
+.title-3 {
   font-size: 40px;
+  padding-top: 30px;
   padding-bottom: 30px;
+  text-align: center;
 
+}
+
+.img-home-list {
+   border-top-left-radius:10px;
+   border-top-right-radius: 10px;
+}
+
+.title-4 {
+  font-size: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  }
+
+.container-feature-home {
+  background-color: #F3D5CE;
+  padding-bottom: 100px;
 }
