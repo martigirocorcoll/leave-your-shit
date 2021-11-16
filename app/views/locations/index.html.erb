@@ -1,5 +1,10 @@
-<div class="text-center pt-3 pb-3">
-  <h1>Storage Locations near you</h1>
+<div class="d-flex justify-content-around pt-3 pb-3">
+  <div>
+    <%= link_to "Create new storage here", new_location_path, class: "btn btn-secondary"%>
+  </div>
+  <div>
+    <h1>Storage Locations near you</h1>
+  </div>
 </div>
 <div class="body-page">
   <div class="cards">
@@ -9,6 +14,12 @@
           <li class="card-category">
             <h3><%= location.name %></h3>
             <h5><%= location.property_type %></h5>
+            <% if location.photo.attached? %>
+              <% location.photo.each do |singlephoto| %>
+                <%= cl_image_tag singlephoto.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
+              <%#= cl_image_tag location.photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
             <br>
             <p>Storage Location Address: <%= location.location_address %></p>
             <br>
@@ -21,12 +32,47 @@
             <% end %></p>
             <p>Price per hour($): <%= location.price %></p>
           </li>
+
+          <div class="storage-container">
+            <div class = "photo">
+              <img src="https://source.unsplash.com/random/150x200" alt="photo">
+            </div>
+            <div class= "description">
+              <%= location.location_address %>
+              <h3><%= location.name %></h3>
+              <%= location.description %>
+              <p>Availability: <% if location.availability == true %>
+                <%= "available" %>
+              <% else %>
+                <%= "not available" %>
+              <% end %></p>
+            <h4>Price per hour($): <%= location.price %></h4>
+            </div>
+          </div>
         <% end %>
+          <div class="d-flex storage-container">
+            <div class = "photo">
+              <img src="https://source.unsplash.com/random/150x200" alt="photo">
+            </div>
+            <div class= "description">
+              <%= "Barcelona,Compte Urgel 147  "%>
+              <h3><%= "Cozy place for your bags" %></h3>
+              <%= "añsdjnfcoaksdmfñlkasdjflkñjñlkdsnñlaksdnvjnvkjdnvkjansdvjan" %>
+              <p>Availability: <% if true == true %>
+                <%= "available" %>
+              <% else %>
+                <%= "not available" %>
+              <% end %></p>
+            <h4>Price per hour($): <%= 2 %></h4>
+          </div>
       </ul>
-      <%= link_to "List a new storage location", new_location_path %>
     </div>
   </div>
   <div>
     <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoibWFydGlnaXJvY29yY29sbCIsImEiOiJja3ZjZWh1cnkweWU0MnBwZzRteGtvZDdmIn0.QH-r1_P0WdpNLrbN6ag57A'>
   </div>
 </div>
+
+<% if policy(Location).create? %>
+<%= link_to "List a new storage location", new_location_path %>
+<% end %>
