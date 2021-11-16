@@ -1,15 +1,18 @@
 class LocationsController < ApplicationController
 
   def index
-    @locations = Location.all
+  @locations = policy_scope(location).order(created_at: :desc)
+  authorize @locations
   end
 
 def new
   @location = Location.new
+  authorize @location
 end
 
 def create
 @location = Location.new(location_params)
+@location.user_id = current_user.id
 authorize @location
     if @location.save
       redirect_to locations_path
