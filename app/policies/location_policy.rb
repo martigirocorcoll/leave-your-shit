@@ -6,6 +6,11 @@ class LocationPolicy < ApplicationPolicy
   end
 
 
+  def index?
+    return true
+  end
+
+
   def create?
     return true
   end
