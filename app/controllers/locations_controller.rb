@@ -10,6 +10,7 @@ end
 
 def create
 @location = Location.new(location_params)
+authorize @location
     if @location.save
       redirect_to locations_path
     else
@@ -20,7 +21,7 @@ end
 private
 
   def location_params
-    params.require(:location).permit(:name, :location_address, :description, :availability, :price, :property_type)
+    params.require(:location).permit(:name, :location_address, :description, :availability, :price, :property_type, photo: [])
   end
 
 end
