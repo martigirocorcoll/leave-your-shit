@@ -22,10 +22,7 @@ text-align: center;
   text-align: center;
   padding-top: 30px;
 
-  h2 {
-    font-size: 50px;
-    padding-bottom: 30px;
-  }
+
 }
 
 
@@ -34,10 +31,25 @@ text-align: center;
   align-items: center;
   justify-content: space-evenly;
   list-style-type: none;
+  padding-bottom: 30px;
 }
 
 .form-home {
   padding-top: 50px;
   display: flex;
   align-items: center;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.number-home {
+  color: #0542F1;
+}
+
+#title-3 {
+  font-size: 40px;
+  padding-bottom: 30px;
+
 }
