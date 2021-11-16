@@ -24,6 +24,7 @@ end
 def show
   @location = Location.find(params[:id])
   @booking = Booking.new
+  authorize @location
 end
 
 private

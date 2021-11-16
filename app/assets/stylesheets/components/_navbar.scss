@@ -13,6 +13,7 @@ $black: #222222;
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -48,9 +49,6 @@ $black: #222222;
     text-decoration: none;
     color: $blue;
   }
-}
-
-.nav-linknormal:hover {
 }
 
 .btn-signin {
