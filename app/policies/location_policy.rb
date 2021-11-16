@@ -12,4 +12,14 @@ class LocationPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+
+  def destroy?
+    return true
+  end
+
+  def show?
+    return true
+  end
+    
 end

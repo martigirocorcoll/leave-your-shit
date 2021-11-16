@@ -20,7 +20,24 @@ class LocationsController < ApplicationController
     end
   end
 
-  private
+
+
+def destroy
+  @location = Location.find(params[:id])
+  authorize @location
+   if @location.destroy
+      redirect_to locations_path
+  end
+end
+
+def show
+  @location = Location.find(params[:id])
+  @booking = Booking.new
+  authorize @location
+end
+
+private
+
 
   def location_params
     params.require(:location).permit(
