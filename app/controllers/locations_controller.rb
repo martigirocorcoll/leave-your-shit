@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
 
   def index
-  @locations = policy_scope(location).order(created_at: :desc)
+  @locations = policy_scope(Location).order(created_at: :desc)
   authorize @locations
   end
 
