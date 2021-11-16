@@ -10,6 +10,7 @@ end
 
 def create
 @location = Location.new(location_params)
+authorize @location
     if @location.save
       redirect_to locations_path
     else
