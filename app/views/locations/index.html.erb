@@ -1,25 +1,35 @@
-<h1>Storage Locations near you</h1>
-<br>
-<ul>
-  <% @locations.each do |location| %>
-    <li class="card-category">
-      <h3><%= location.name %></h3>
-      <h5><%= location.property_type %></h5>
-      <br>
-      <p>Storage Location Address: <%= location.location_address %></p>
-      <br>
-      <p>Storage Description: <%= location.description %></p>
-      <br>
-      <p>Availability: <% if location.availability == true %>
-        <%= "available" %>
-      <% else %>
-        <%= "not available" %>
-      <% end %></p>
-      <p>Price per hour($): <%= location.price %></p>
-    </li>
-    <% end %>
-  </ul>
-
+<div class="text-center pt-3 pb-3">
+  <h1>Storage Locations near you</h1>
+</div>
+<div class="body-page">
+  <div class="cards">
+    <div>
+      <ul>
+        <% @locations.each do |location| %>
+          <li class="card-category">
+            <h3><%= location.name %></h3>
+            <h5><%= location.property_type %></h5>
+            <br>
+            <p>Storage Location Address: <%= location.location_address %></p>
+            <br>
+            <p>Storage Description: <%= location.description %></p>
+            <br>
+            <p>Availability: <% if location.availability == true %>
+              <%= "available" %>
+            <% else %>
+              <%= "not available" %>
+            <% end %></p>
+            <p>Price per hour($): <%= location.price %></p>
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to "List a new storage location", new_location_path %>
+    </div>
+  </div>
+  <div>
+    <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoibWFydGlnaXJvY29yY29sbCIsImEiOiJja3ZjZWh1cnkweWU0MnBwZzRteGtvZDdmIn0.QH-r1_P0WdpNLrbN6ag57A'>
+  </div>
+</div>
 
 <% if policy(Location).create? %>
 <%= link_to "List a new storage location", new_location_path %>
