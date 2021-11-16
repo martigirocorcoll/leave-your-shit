@@ -1,5 +1,5 @@
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <img src="https://cdn-icons-png.flaticon.com/512/969/969182.png" />
     </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,15 +10,17 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="my-link" href="#">Home</a>
+          <a class="my-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="my-link" href="#">Publish a storage</a>
+          <a class="my-link" href="/locations/new">Publish a storage</a>
         </li>
+        <% if user_signed_in? == false %>
         <li class="nav-item">
           <%= link_to "Sign in", new_user_session_path, class: "my-link"%>
           <%# Hide above when they're logged in %>
         </li>
+        <% else %>
         <%# Hide below when they're not logged in %>
         <li class="nav-item dropdown">
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier"/>
@@ -27,6 +29,7 @@
             <%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
           </div>
         </li>
+        <% end %>
       </ul>
     </div>
   </div>
