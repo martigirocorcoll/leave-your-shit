@@ -9,14 +9,14 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item nav-linknormal">
           <a class="my-link" href="/">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item nav-linknormal">
           <a class="my-link" href="/locations/new">Publish a storage</a>
         </li>
         <% if user_signed_in? == false %>
-        <li class="nav-item">
+        <li class="nav-item btn-signin">
           <%= link_to "Sign in", new_user_session_path, class: "my-link"%>
           <%# Hide above when they're logged in %>
         </li>

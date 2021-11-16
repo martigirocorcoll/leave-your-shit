@@ -9,10 +9,11 @@ $black: #222222;
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: $lightblue;
+  background: $black;
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -43,8 +44,17 @@ $black: #222222;
   padding-left: 0.5rem;
   display: block;
   padding: 0.5rem 1rem;
+  transition: 0.5s;
   &:hover {
     text-decoration: none;
-    color: $darkblue;
+    color: $blue;
+  }
+}
+
+.btn-signin {
+  background-color: $darkblue;
+  border-radius: 5px;
+  &:hover{
+    background-color: #0435bd;
   }
 }
