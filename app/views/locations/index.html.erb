@@ -5,6 +5,10 @@
     <li class="card-category">
       <h3><%= location.name %></h3>
       <h5><%= location.property_type %></h5>
+      <% if location.photo.attached? %>
+        <%= cl_image_tag location.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+
       <br>
       <p>Storage Location Address: <%= location.location_address %></p>
       <br>
