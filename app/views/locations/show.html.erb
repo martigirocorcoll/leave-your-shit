@@ -1,0 +1,39 @@
+
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1680&q=80);">
+  <div class="container-show">
+    <div>
+      <h1 id=""> <strong><%=  @location.name  %></strong></h1>
+
+    </div>
+  </div>
+</div>
+<div class="show-container">
+  <div class="card-show">
+    <div class="card-body-show">
+      <h5><strong>Details</strong></h5>
+      <hr>
+      <p>Property type <strong><%= @location.property_type %></strong></p>
+      <p class="card-text"><%= @location.description %></p>
+    </div>
+
+    <div class="card-location">
+      <h5><strong>Location</strong></h5>
+      <hr>
+      <p class="card-title"><%= @location.location_address %></p>
+    </div>
+  </div>
+
+
+  <div class="container-booking-card">
+    <div class="booking-card" >
+       <h3 class="card-price"> <strong>€ <%= @location.price%></strong></h3><p>/hour</p>
+       <form action="">
+          <p>Insert you dates</p>
+          <input type="text">
+       </form>
+       <a href="#" class="btn btn-primary">Instant Book</a>
+    </div>
+    <div class="booking-card-avatar">
+    </div>
+  </div>
+</div>

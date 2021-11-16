@@ -24,7 +24,15 @@
 .btn {
   background-color: #0542F1;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   border-style: none;
+  margin-left: 30px;
+  border-radius: 30px;
 
+}
+
+.banner-show {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
 }
