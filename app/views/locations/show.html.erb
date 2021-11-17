@@ -1,5 +1,5 @@
 
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1680&q=80);">
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @location.photo.key, height: 300, crop: :fill %>');">
   <div class="container-show">
     <div>
       <h1 id="title-show"> <strong><%=  @location.name  %></strong></h1>
@@ -43,7 +43,7 @@
       <img class="avatar-booking-show" src="https://media-exp1.licdn.com/dms/image/C5603AQG6tX2U0Tmkbw/profile-displayphoto-shrink_400_400/0/1614945879239?e=1642636800&v=beta&t=6-qeds4nd8GOF3oZIclptWbbs8i91KO-RQAncGzJhdo" alt="">
      </div>
      <div>
-      <p>Hosted by "PLACEHOLDER" </p>
+      <p>Hosted by <%=@location.user.name%> </p>
      </div>
     </div>
   </div>
