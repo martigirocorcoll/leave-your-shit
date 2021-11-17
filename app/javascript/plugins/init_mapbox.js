@@ -62,6 +62,10 @@ const initMapbox = () => {
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl
     }));
+    window.addEventListener('load', () => {
+      map.resize();
+      fitMapToMarkers(map, markers);
+    })
   }
 };
 
