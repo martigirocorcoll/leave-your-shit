@@ -3,7 +3,6 @@
 </div>
 <div class="body-page">
   <div class="cards-index">
-  <% 10.times do  %>
     <% @locations.each do |location| %>
       <div class="d-flex storage-container">
         <div>
@@ -29,7 +28,6 @@
           <%= link_to "See more", location_path(location), class: "btn btn-flat", id: "show"  %>
         </div>
       </div>
-    <% end %>
     <% end %>
   </div>
   <div id="map"
