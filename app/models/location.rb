@@ -1,6 +1,8 @@
 class Location < ApplicationRecord
   has_one_attached :photo
   has_many :bookings
+  geocoded_by :location_address
+  after_validation :geocode, if: :will_save_change_to_location_address?
   #belongs_to :user
 
 
