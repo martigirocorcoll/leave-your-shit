@@ -12,8 +12,8 @@ def random_address
   ["Passeig de Gracia, Barcelona", "Passeig de Sant Joan, Barcelona", "Passeig del Born, Barcelona",
    "Carrer del Consell de Cent, Barcelona", "Carrer dels Tallers, Barcelona", "Carrer del Blai, Barcelona",
    "Rua de Santa Catarina, Porto", "Rua de Boavista, Porto", "Rua do Campo Alegre, Porto",
-   "Rua da Graciosa, Porto", "Rua da Constituicao, Porto", "Rua do Melo, Porto", "Rua de Sao Paulo, Porto",
-   "Rua Antonio Nobre, Porto", "Rua Joao Grave, Porto", "Avenida da Franca, Porto", "Calle Leon XIII, Sevilla",
+   "Rua da Graciosa, Porto, Portugal", "Rua da Constituicao, Porto, Portugal", "Rua do Melo, Porto, Portugal", "Rua de Sao Paulo, Porto, Portugal",
+   "Rua Antonio Nobre, Porto, Portugal", "Rua Joao Grave, Porto, Portugal", "Avenida da Franca, Porto, Portugal", "Calle Leon XIII, Sevilla",
    "Calle Sierpes, Sevilla", "Calle Betis, Sevilla", "Avenida de la Paz, Sevilla", "Avenida de la Buhaira, Sevilla",
    "Avenida de Hytasa, Sevilla", "Calle Alonso Cano, Sevilla", "Calle Antonio Delgado, Sevilla"].sample
 end
@@ -42,10 +42,9 @@ end
   )
 end
 
-
-
 10.times do
   adjective = Faker::Adjective.positive
+  adjective2 = Faker::Adjective.positive
   location = Location.new(
     availability: true,
     location_address: random_address,
@@ -56,7 +55,7 @@ end
   )
   keyword_property = location.property_type.gsub("-", " ")
   file = URI.open("https://source.unsplash.com/1600x900/?storage,#{keyword_property}")
-  location.name = "#{concordance(adjective)} #{location.property_type} by #{location.user.name}"
+  location.name = "#{concordance(adjective)} and #{adjective2} #{location.property_type} by #{location.user.name}"
   location.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   location.save!
   p "Created #{location.name}"
