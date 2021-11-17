@@ -26,6 +26,8 @@ align-items: flex-start;
   width: 400px;
   position: relative;
   top: -100px;
+
+
 }
 
 .booking-card-avatar {
@@ -37,6 +39,8 @@ align-items: flex-start;
   border-color: grey;
   width: 400px;
   padding: 20px;
+  display: flex;
+  align-items: center;
 
 }
 
@@ -52,5 +56,12 @@ align-items: flex-start;
 .img-card-show {
   border-radius: 10px;
   width: 800px;
+
+}
+
+.avatar-booking-show {
+  border-radius: 50%;
+  height: 60px;
+  padding-right: 20px;
 
 }
