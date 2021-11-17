@@ -21,7 +21,7 @@
   flex-grow: 1;
   grid-template-columns: 1fr;
   grid-gap: 16px;
-  width: 50%;
+  width: 1600px;
 }
 
 
@@ -48,12 +48,46 @@
 
 .storage-container{
   background-color: white;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border-radius:10px;
+  margin: 10px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .miniphoto{
   margin-right: 25px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+
+.title-index {
+  background-color: #0542F1;
+  color: white;
+}
+
+.description {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.btn-index {
+  background-color: #0542F1;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  border-style: none;
+  margin-left: 170px;
+  border-radius: 30px;
+  padding: 10px;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 10;
+  &:hover{
+    background-color: #222222;
+    color: white;
+    text-decoration: none;
+  }
+
 }
