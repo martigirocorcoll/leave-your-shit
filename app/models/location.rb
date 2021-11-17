@@ -1,7 +1,7 @@
 class Location < ApplicationRecord
   has_one_attached :photo
   has_many :bookings
-  #belongs_to :user
+  belongs_to :user
 
 
   validates :name, presence: true, uniqueness: true, length: { minimum: 6 }
