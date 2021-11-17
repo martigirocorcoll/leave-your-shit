@@ -60,7 +60,21 @@
 <div class="container-feature-home" style="background-image: url(app/images/home/background-features.png);">
   <div>
     <p class="title-4">Featured Barcelona Listings</p>
-
+    <ul class="crazy-list">
+    <% 3.times do %>
+    <% @location = Location.all.sample %>
+      <li>
+      <div class="card" style="width: 18rem;">
+      <%= cl_image_tag @location.photo.key,  class:"card-img-top" %>
+      <div class="card-body">
+        <h4><%= @location.name %></h4>
+        <h5><%= @location.location_address %></h5>
+        <h6><%= @location.price %>$ per hour</h6>
+      </div>
+    </div>
+    </li>
+      <% end %>
+    </ul>
   </div>
   <div>
 
