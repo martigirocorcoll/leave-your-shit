@@ -1,15 +1,9 @@
 <div class="d-flex justify-content-around pt-3 pb-3">
-  <div>
-    <% if policy(Location).create? %>
-    <%= link_to "Create new storage here", new_location_path, class: "btn btn-secondary"%>
-    <% end %>
-  </div>
-  <div>
     <h1>Storage Locations near you</h1>
-  </div>
 </div>
 <div class="body-page">
   <div class="cards-index">
+  <% 10.times do  %>
     <% @locations.each do |location| %>
       <div class="d-flex storage-container">
         <div>
@@ -20,17 +14,22 @@
           <% end %>
         </div>
         <div class= "description">
-          <%= location.location_address %>
-          <h3><%= location.name %></h3>
-          <%= location.description %>
-          <p>Availability: <% if location.availability == true %>
-            <%= "available" %>
+        <h3><%= location.name %></h3>
+        <h5><%= location.property_type.capitalize %></h5>
+          <p>Address: <%= location.location_address %></p>
+          <p>"<%= location.description %>"</p>
+          <p>Available on your selected dates?
+           <% if location.availability == true %>
+            <img src="https://cdn-icons-png.flaticon.com/512/3572/3572255.png" alt="green tick", class="availablility">
           <% else %>
-            <%= "not available" %>
+            <img src="https://cdn-icons-png.flaticon.com/512/3572/3572260.png" alt="red cross" class="availablility">
           <% end %></p>
-          <h4>Price per hour($): <%= location.price %></h4>
+          <p>Price per hour($): <%= location.price %></p>
+          <%= link_to "Delete this location", location_path(location), method: :delete, data: { confirm: "Are you sure you want to delete this location?" }, class: "btn btn-flat", id: "delete"  %>
+          <%= link_to "See more", location_path(location), class: "btn btn-flat", id: "show"  %>
         </div>
       </div>
+    <% end %>
     <% end %>
   </div>
   <div class="map" id="map"
