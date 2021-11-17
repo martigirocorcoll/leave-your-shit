@@ -20,8 +20,6 @@ class LocationsController < ApplicationController
     end
   end
 
-
-
 def destroy
   @location = Location.find(params[:id])
   authorize @location
