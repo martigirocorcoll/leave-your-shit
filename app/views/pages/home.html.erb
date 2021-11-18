@@ -4,11 +4,17 @@
     <p>Find luggage storage near you</p>
 
     <div class="form-home">
-      <form action="">
-       <input type="text" class="form-home-banner">
-      </form>
-      <%= link_to "Find storage", locations_path, class:"btn btn-primary"  %>
-      <%# <a class="btn btn-primary" href="locations_path">Find storage</a> %>
+    <%= form_tag locations_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Write the address",
+        class: "form-home-banner",
+        style: "text-align: center"
+      %>
+      <%= submit_tag "Find Storage", class: "btn btn-primary" %>
+    <% end %>
+    <%# how will i search within a radius.................... %>
     </div>
   </div>
 </div>
