@@ -42,6 +42,18 @@ text-align: center;
 }
 
 
+.card {
+  border-radius: 10px;
+  border-color: rgb(194, 194, 194);
+  box-shadow:  0 0 15px rgba(0,0,0,0.2);
+  transition: 0.8s;
+  &:hover{
+    background-color: #91D1D9;
+    box-shadow:  0 0 15px rgba(0,0,0,0.4);
+    transform: translate(0px, -20px);
+  }
+}
+
 
 .number-home {
   color: $main-color;
