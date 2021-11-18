@@ -1,0 +1,18 @@
+.personal-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 50px 20px;
+
+}
+
+.img-mainhome{
+  height: 480px;
+  width: 320px;
+  padding-left: 16px;
+}
+
+.card-img-top {
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
