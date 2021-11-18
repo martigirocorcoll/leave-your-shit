@@ -13,7 +13,10 @@
           <a class="my-link" href="/">Home</a>
         </li>
         <li class="nav-item nav-linknormal">
-          <a class="my-link" href="/locations/new">Publish a storage</a>
+          <%# <a class="my-link" href="/locations/new">Publish a storage</a> %>
+          <button type="button" class="nav-button" data-toggle="modal" data-target="#exampleModalCenter">
+          Publish a storage
+          </button>
         </li>
         <% if user_signed_in? == false %>
         <li class="nav-item btn-signin">
@@ -34,3 +37,22 @@
       </ul>
     </div>
   </div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="popup-card modal-content">
+      <h1>List your space!</h1>
+      <% location = Location.new %>
+      <%= simple_form_for(location) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :property_type, :collection => %w[garage spare-room basement container shed attic warehouse office]  %>
+        <%= f.input :location_address %>
+        <%= f.input :description %>
+        <%= f.input :price, label: 'Hourly price($):' %>
+        <%= f.input :photo, as: :file  %>
+        <%= f.input :availability,     as: :radio_buttons, label: 'Available now?' %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
