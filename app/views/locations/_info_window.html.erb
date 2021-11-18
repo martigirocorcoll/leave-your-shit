@@ -1,2 +1,17 @@
-<h2><%= location.name %></h2>
-<p><%= location.location_address %></p>
+<% if location.nil? %>
+  <div class="wind_head">
+    <h6><%= @location.name %></h6>
+  </div>
+  <div class= "wind_body">
+    <p><%= @location.location_address %></p>
+    <p><%= @location.price %></p>
+  </div>
+<% else %>
+  <div class="wind_head">
+    <h6><%= location.name %></h6>
+  </div>
+  <div class= "wind_body">
+    <p><%= location.location_address %></p>
+    <p><%= location.price %></p>
+  </div>
+<% end %>
