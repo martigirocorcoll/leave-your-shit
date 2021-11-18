@@ -1,6 +1,14 @@
 class LocationsController < ApplicationController
   def index
-    @locations = policy_scope(Location).order(created_at: :desc)
+    if params[:query].present?
+      # @locations = policy_scope(Location).search_by_address(params[:query]).order(created_at: :desc)
+      @locations = policy_scope(Location).near(params[:query]).order(created_at: :desc)
+
+    else
+      @locations = policy_scope(Location).order(created_at: :desc)
+    end
+
+    # @locations = policy_scope(Location).order(created_at: :desc)
     authorize @locations
     #  @locations = Location.all
       @markers = @locations.geocoded.map do |location|
@@ -40,6 +48,11 @@ def show
   @location = Location.find(params[:id])
   @booking = Booking.new
   authorize @location
+  @markers = [{
+  lat: @location.latitude,
+  lng: @location.longitude,
+  info_window: render_to_string(partial: "info_window", locals: { location: location }),
+  }]
 end
 
 private

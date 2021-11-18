@@ -1,15 +1,17 @@
 // Specific CSS for your home-page
 
+$rose: #f3d5ce;
+$main-color: #008ab0;
 
 .list-title {
-background-color: #0542F1;
+background-color: $main-color;
 color: white;
 padding: 10px 0 10px;
 text-align: center;
 }
 
 .list-container {
-  background-color: #0542F1;
+  background-color: $main-color;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -30,6 +32,7 @@ text-align: center;
   list-style-type: none;
   padding-bottom: 100px;
   padding-left: 0;
+  margin: 0px 20px;
 }
 
 .form-home {
@@ -37,6 +40,7 @@ text-align: center;
   display: flex;
   align-items: center;
 }
+
 
 .card {
   border-radius: 10px;
@@ -50,15 +54,16 @@ text-align: center;
   }
 }
 
+
 .number-home {
-  color: #0542F1;
+  color: $main-color;
 }
 
 .title-3 {
   font-size: 40px;
   padding-top: 30px;
   padding-bottom: 30px;
-  text-align: center;
+  text-align: right;
 
 }
 
@@ -76,10 +81,32 @@ text-align: center;
 
 .container-feature-home {
   padding-bottom: 100px;
-  background-image: url("https://i.ibb.co/cyTtBPT/Screenshot-2021-11-17-at-11-43-15.png");
+  // background-image: url("https://i.ibb.co/cyTtBPT/Screenshot-2021-11-17-at-11-43-15.png");
+  background-color: $main-color;
+  box-shadow: 0px -3px 10px $main-color;
   background-size: cover;
   background-position: center;
+}
 
+.container-responsivegrid{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  padding: 0px 16px;
+}
+
+.card {
+  border-radius: 10px;
+  border-color: rgb(194, 194, 194);
+  box-shadow:  0 0 15px rgba(0,0,0,0.2);
+  transition: 0.8s;
+
+
+  &:hover{
+    background-color: #91D1D9;
+    box-shadow:  0 0 15px rgba(0,0,0,0.4);
+    top: -5px;
+  }
 }
 
 #main-logo{
@@ -90,4 +117,34 @@ text-align: center;
   border-radius: 16px;
   height: 32px;
   width: 240px;
+}
+
+.algolia-places {
+  width: auto;
+  display: auto !important;
+}
+
+// Responsiveness
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .container-responsivegrid{
+  grid-template-columns: 1fr 1fr;
+}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container-responsivegrid{
+  grid-template-columns: 1fr 1fr 1fr;
+}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .container-responsivegrid{
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 }

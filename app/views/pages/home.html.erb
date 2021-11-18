@@ -4,11 +4,18 @@
     <p>Find luggage storage near you</p>
 
     <div class="form-home">
-      <form action="">
-       <input type="text" class="form-home-banner">
-      </form>
-      <%= link_to "Find storage", locations_path, class:"btn btn-primary"  %>
-      <%# <a class="btn btn-primary" href="locations_path">Find storage</a> %>
+    <%= form_tag locations_path, method: :get do %>
+      <div style="display: flex;">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Write the address",
+        class: "form-home-banner",
+        style: "text-align: center"
+      %>
+      <%= submit_tag "Find Storage", class: "btn btn-primary" %>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>
@@ -27,9 +34,37 @@
     <p>in reviews</p>
   </li>
 </ul>
-<div class="how-it-works">
+<div class="how-it-works personal-container">
   <div class="list-title2">
-    <p class="title-3">Leave your shit in <strong>3 steps</strong></p>
+    <p class="title-3", style="padding-bottom: 0px;">Leave your shit </p>
+    <p class="title-3", style="padding-top: 0px;"><strong>in 3 steps</strong></p>
+  </div>
+  <div>
+    <img src="https://pngimg.com/uploads/luggage/luggage_PNG10746.png" alt="Baggage", class="img-mainhome">
+  </div>
+  <div>
+  <ol>
+    <li class ="list-orderedsteps">
+      Book
+      <p class="list-stepcontent">Book online and receive directions</p>
+    </li>
+    <li class ="list-orderedsteps">
+      Drop
+      <p class="list-stepcontent">Drop off the luggage at one of the locations</p>
+    </li>
+    <li class ="list-orderedsteps">
+      Enjoy
+      <p class="list-stepcontent">Enjoy without the burden of your luggage</p>
+    </li>
+  </ol>
+  </div>
+</div>
+
+
+<%# <div class="how-it-works">
+  <div class="list-title2">
+    <p class="title-3">Leave your shit</p>
+    <p><strong>in 3 steps</strong></p>
   </div>
 
   <ol class="crazy-list">
@@ -56,28 +91,26 @@
           <li>Enjoy the time without the burden of your luggage</li>
       </div>
   </ol>
-</div>
+</div> %>
 
 <div class="container-feature-home">
-  <div>
-    <p class="title-4">Featured Barcelona Listings</p>
-    <ul class="crazy-list">
-    <% 3.times do %>
-    <% @location = Location.all.sample %>
-      <li>
-      <div class="card" style="width: 18rem;">
-      <%= cl_image_tag @location.photo.key,  class:"card-img-top" %>
-      <div class="card-body">
-        <h4><%= @location.name %></h4>
-        <h5><%= @location.location_address %></h5>
-        <h6><%= @location.price %>$ per hour</h6>
-      </div>
-    </div>
-    </li>
+    <p class="title-4", style="color: white">Our Top Listings</p>
+    <%# <ul class="crazy-list"> %>
+    <div class="container-responsivegrid">
+      <% 4.times do %>
+      <% @location = Location.all.sample %>
+        <%# <li> %>
+        <div class="card">
+          <%= cl_image_tag @location.photo.key,  class:"card-img-top" %>
+          <div class="card-body">
+            <% short_name = @location.name.split[0..4].join(" ") %>
+            <h4><%= short_name %></h4>
+            <h5><%= @location.location_address %></h5>
+            <h6><%= @location.price %>$ per hour</h6>
+          </div>
+        </div>
+      <%# </li> %>
       <% end %>
-    </ul>
-  </div>
-  <div>
-
-  </div>
+    </div>
+    <%# </ul> %>
 </div>
