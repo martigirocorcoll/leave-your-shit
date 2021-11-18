@@ -46,7 +46,7 @@ text-align: center;
   &:hover{
     background-color: #91D1D9;
     box-shadow:  0 0 15px rgba(0,0,0,0.4);
-    top: -5px;
+    transform: translate(0px, -20px);
   }
 }
 
