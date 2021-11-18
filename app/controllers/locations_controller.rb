@@ -48,6 +48,11 @@ def show
   @location = Location.find(params[:id])
   @booking = Booking.new
   authorize @location
+  @markers = [{
+  lat: @location.latitude,
+  lng: @location.longitude,
+  info_window: render_to_string(partial: "info_window", locals: { location: location }),
+  }]
 end
 
 private

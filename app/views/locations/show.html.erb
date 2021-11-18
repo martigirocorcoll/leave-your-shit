@@ -1,4 +1,3 @@
-
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @location.photo.key, height: 300, crop: :fill %>');">
   <div class="container-show">
     <div>
@@ -22,9 +21,14 @@
       <h5><strong>Location</strong></h5>
       <hr>
       <p class="card-title"><%= @location.location_address %></p>
-      <div>
+      <%# <div>
         <img class="img-card-show" src="https://s1.eestatic.com/2017/10/11/social/la_jungla_-_social_253487245_50033618_1706x960.jpg" alt="">
-      </div>
+      </div> %>
+      <div id="map"
+     style="width: 800px; height: 550px; border-radius: 10px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
     </div>
   </div>
 
