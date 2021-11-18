@@ -1,7 +1,17 @@
 .user-img-cont{
   width:50%;
   margin: 0 auto;
-  background-image: url("https://www.seekpng.com/png/full/356-3562377_personal-user.png");
+  background-image: url("https://images.unsplash.com/photo-1520466809213-7b9a56adcd45?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2787&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+
+.sign-img-cont{
+  width:50%;
+  margin: 0 auto;
+  background-image: url("https://i.pinimg.com/originals/f3/e4/a9/f3e4a9fe01d9006b0e4974d6e74f7d80.jpg");
   background-repeat: no-repeat;
   background-position: center;
 
@@ -20,5 +30,17 @@
     margin-bottom: 30px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     height: 750px;
+
+}
+
+.sign-form-cont{
+    width: 50%;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    background-color: white;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    height: 90vh;
 
 }
