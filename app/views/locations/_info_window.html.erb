@@ -3,15 +3,18 @@
     <h6><%= @location.name %></h6>
   </div>
   <div class= "wind_body">
-    <p><%= @location.location_address %></p>
-    <p><%= @location.price %></p>
+    <p><i class="fas fa-map-marker-alt"></i> <%= @location.location_address %></p>
+    <p><i class="fas fa-euro-sign"></i> <%= @location.price %>/hour</p>
   </div>
 <% else %>
   <div class="wind_head">
     <h6><%= location.name %></h6>
   </div>
   <div class= "wind_body">
-    <p><%= location.location_address %></p>
-    <p><%= location.price %></p>
+    <p><i class="fas fa-map-marker-alt"></i> <%= location.location_address %></p>
+    <p><i class="fas fa-euro-sign"></i> <%= location.price %>/hour</p>
+  </div class="wd_btn_container">
+  <div>
+    <%= link_to "See more", location_path(location), class: "wind_btn", id: "show"  %>
   </div>
 <% end %>
