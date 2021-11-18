@@ -1,0 +1,24 @@
+.user-img-cont{
+  width:50%;
+  margin: 0 auto;
+  background-image: url("https://www.seekpng.com/png/full/356-3562377_personal-user.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.flex-cont{
+  display: flex;
+}
+
+.new-form-cont{
+    width: 50%;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    background-color: white;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    height: 750px;
+
+}
