@@ -13,10 +13,11 @@ class Location < ApplicationRecord
   validates :availability, exclusion: [nil]
   validates :price, presence: true, numericality: true
 
+  # I ended up not using the below, but the method is here if needed
   include PgSearch::Model
   pg_search_scope :search_by_address,
     against: [ :location_address ],
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true }
     }
 end
