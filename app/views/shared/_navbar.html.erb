@@ -50,6 +50,10 @@
         <%= f.input :property_type, :collection => %w[garage spare-room basement container shed attic warehouse office]  %>
         <%= f.input :location_address %>
         <%= f.input :description %>
+        <%= f.input :description, :as => :hidden, :input_html => {
+        :value => location.description,
+        :id => "new_storage"
+      } %>
         <%= f.input :price, label: 'Hourly price($):' %>
         <%= f.input :photo, as: :file  %>
         <%= f.input :availability,     as: :radio_buttons, label: 'Available now?' %>
