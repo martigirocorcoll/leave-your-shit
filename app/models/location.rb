@@ -6,12 +6,17 @@ class Location < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location_address?
   belongs_to :user
 
-
-
   validates :name, presence: true, uniqueness: true, length: { minimum: 6 }
   validates :property_type, presence: true
   validates :location_address, presence: true
   validates :description, presence: true, length: { minimum: 20 }
   validates :availability, exclusion: [nil]
   validates :price, presence: true, numericality: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_address,
+    against: [ :location_address ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
