@@ -42,8 +42,10 @@
        <%= simple_form_for [@location, @booking] do |f| %>
         <%= f.input :start_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
         <%= f.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
-        <%= f.submit 'Book now', class:'btn-show btn-primary'%>
+        <% if current_user != @location.user %>
+          <%= f.submit 'Book now', class:'btn-show btn-primary'%>
         <% end %>
+       <% end %>
     </div>
     <div class="booking-card-avatar">
      <div>
