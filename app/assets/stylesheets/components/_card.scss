@@ -145,7 +145,7 @@
 .card-body {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .price-card-index {
@@ -154,6 +154,7 @@
 
 .user-card-index {
   font-size: 10px;
+  margin: 0px;
 }
 
 #btn-card-index {
