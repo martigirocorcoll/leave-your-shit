@@ -2,7 +2,7 @@
 <h1>Welcome to your dashboard</h1>
 
 <h2>Your bookings</h2>
-
+<div class="card-grid">
 <% @bookings.each do |booking| %>
 <div class="confirmation-details">
 <h5><%= booking.location.name %></h5>
@@ -13,9 +13,10 @@
 <p>Booking status: <%= booking.status %></p>
 </div>
 <% end %>
-
+</div>
 
 <h2>Your requests</h2>
+<div class="card-grid">
 <% @bookings.each do |booking| %>
 <% if booking.pending? %>
 <div class="confirmation-details">
@@ -25,7 +26,8 @@
 <p>Total days: <%= (booking.end_date - booking.start_date).to_i %></p>
 <p>Total price: $<%= booking.agreed_price %></p>
 <p>booking status: <%= booking.status %></p>
-<%= link_to "Accept", booking_path(booking,{status: "accepted"}), method: :patch, class: "btn-index btn-flat"  %>
+<%= link_to "Accept", booking_path(booking,{status: "accepted"}), method: :patch, class: "btn-accept"  %>
 </div>
 <% end %>
 <% end %>
+</div>
