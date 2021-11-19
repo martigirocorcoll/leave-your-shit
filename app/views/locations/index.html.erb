@@ -4,7 +4,11 @@
 <div class="map-cards">
 
     <div class="title-index">
-        <h2>Storages in <%= params[:query] %></h2>
+        <%if params[:query].present?%>
+          <h2>Storages in <%= @shortened_address %></h2>
+        <%else %>
+          <h2>All storages</h2>
+        <%end%>
         <hr>
     </div>
 
@@ -12,7 +16,7 @@
       <% @locations.each do |location| %>
 
         <div class="storage-container" style="width: 18rem;">
-        <div>
+          <div>
             <% if location.photo.attached? %>
               <div class="img-card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=rails_blob_url(location.photo)%>')">
                 <div class="card-title-index">
@@ -31,8 +35,14 @@
           </div>
 
           <div class="card-body">
-
-            <p class="user-card-index"><strong><%= location.property_type.capitalize %> </strong>by <%= location.user.name %></p>
+            <div class="card-writtenparts">
+              <div class="card-property">
+                <p class="user-card-index"><strong><%= location.property_type.capitalize %> </p>
+              </div>
+              <div class="card-owner">
+                <p class="user-card-index"></strong>by <%= location.user.name %></p>
+              </div>
+            </div>
 
 
 

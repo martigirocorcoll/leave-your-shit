@@ -3,7 +3,7 @@ class LocationsController < ApplicationController
     if params[:query].present?
       # @locations = policy_scope(Location).search_by_address(params[:query]).order(created_at: :desc)
       @locations = policy_scope(Location).near(params[:query]).order(created_at: :desc)
-
+      @shortened_address = params[:query].split(",")[0..1].join(",")
     else
       @locations = policy_scope(Location).order(created_at: :desc)
     end
@@ -31,8 +31,6 @@ class LocationsController < ApplicationController
     authorize @location
     if @location.save
       redirect_to locations_path
-    else
-      render :new
     end
   end
 

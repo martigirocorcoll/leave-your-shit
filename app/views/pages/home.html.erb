@@ -3,38 +3,52 @@
     <img src="https://i.ibb.co/6vT2R0b/leaveyourshitlogo.png" alt="leave your shit logo", id="main-logo">
     <p>Find luggage storage near you</p>
 
-    <div class="form-home">
-    <%= form_tag locations_path, method: :get do %>
-      <div style="display: flex;">
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Write the address",
-        class: "form-home-banner",
-        style: "text-align: center"
-      %>
-      <%= submit_tag "Find Storage", class: "btn btn-primary" %>
+    <div class="form-container-home">
+      <div class="form-home">
+      <%= form_tag locations_path, method: :get do %>
+        <div style="display: flex;">
+        <div>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Write the address",
+          class: "form-home-banner",
+          style: "text-align: center"
+        %>
+        </div>
+          <div>
+            <%= submit_tag "Find Storage", class: "btn-home btn-primary" %>
+          </div>
+        </div>
       </div>
     <% end %>
     </div>
+
   </div>
 </div>
 
 <ul class="list-container">
+<div  data-aos="zoom-in">
   <li class="list-title">
     <h2>1 235 </h2>
     <p>happy users</p>
   </li>
+</div>
+<div  data-aos="zoom-in">
   <li class="list-title">
     <h2>6 356</h2>
     <p>locations to store</p>
   </li>
-  <li class="list-title">
-    <h2>8.9 </h2>
-    <p>in reviews</p>
-  </li>
+</div>
+  <div  data-aos="zoom-in">
+    <li class="list-title">
+      <h2>8.9 </h2>
+      <p>in reviews</p>
+    </li>
+  </div>
 </ul>
 <div class="how-it-works personal-container">
+
   <div class="list-title2">
     <p class="title-3", style="padding-bottom: 0px;">Leave your shit </p>
     <p class="title-3", style="padding-top: 0px;"><strong>in 3 steps</strong></p>
@@ -44,17 +58,23 @@
   </div>
   <div>
   <ol>
+    <div data-aos="fade-left">
     <li class ="list-orderedsteps">
-      Book
-      <p class="list-stepcontent">Book online and receive directions</p>
+        Book
+        <p class="list-stepcontent">Book online and receive directions</p>
+    </div>
     </li>
-    <li class ="list-orderedsteps">
+    <div data-aos="fade-left">
+      <li class ="list-orderedsteps">
       Drop
       <p class="list-stepcontent">Drop off the luggage at one of the locations</p>
+    </div>
     </li>
-    <li class ="list-orderedsteps">
-      Enjoy
-      <p class="list-stepcontent">Enjoy without the burden of your luggage</p>
+     <div data-aos="fade-left">
+        <li class ="list-orderedsteps">
+        Enjoy
+        <p class="list-stepcontent">Enjoy without the burden of your luggage</p>
+      </div>
     </li>
   </ol>
   </div>
@@ -93,24 +113,36 @@
   </ol>
 </div> %>
 
-<div class="container-feature-home">
-    <p class="title-4", style="color: white">Our Top Listings</p>
+<div class="container-feature-home" style="padding-left: 20px;">
+    <p class="title-4", style="color: white">Our top places to <strong>leave your shit</strong></p>
     <%# <ul class="crazy-list"> %>
-    <div class="container-responsivegrid">
-      <% 4.times do %>
+  <div class="container-responsivegrid">
+    <% 8.times do %>
       <% @location = Location.all.sample %>
         <%# <li> %>
-        <div class="card">
-          <%= cl_image_tag @location.photo.key,  class:"card-img-top" %>
+        <div class="storage-container" style="width: 18rem; " >
+          <div>
+            <div class="img-card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=rails_blob_url(@location.photo)%>')">
+              <div class="card-title-index">
+                <h5><%= @location.name.split[0..4].join(' ') %></h5>
+                <small><%= @location.location_address.split[0..3].join(' ') %></small>
+                <div id="btn-card-index">
+                  <%= link_to "See more", location_path(@location), class: "btn-index btn-flat", id: "show"  %>
+                </div>
+              </div>
+            </div>
+            <%# <%= cl_image_tag location.photo.key, height: 200, width: 300, crop: :fill, class:"miniphoto" %>
+          </div>
           <div class="card-body">
-            <% short_name = @location.name.split[0..4].join(" ") %>
-            <h4><%= short_name %></h4>
-            <h5><%= @location.location_address %></h5>
-            <h6><%= @location.price %>$ per hour</h6>
+            <p class="user-card-index"><strong><%= @location.property_type.capitalize %> </strong>by <%= @location.user.name %></p>
+            <div class="btn-card-index">
+                <%# <%= link_to "Delete", location_path(location), method: :delete, data: { confirm: "Are you sure you want to delete this location?" }, id: "delete"  %>
+              <p class="price-card-index"><strong> €<%= @location.price%> </strong> <small>/hour</small></p>
+            </div>
           </div>
         </div>
       <%# </li> %>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
     <%# </ul> %>
 </div>

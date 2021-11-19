@@ -11,24 +11,27 @@
     <div class="card-body-show">
       <h5><strong>Details</strong></h5>
       <hr>
-      <strong>Property</strong>
-      <p><%= @location.property_type.capitalize %></p>
-      <strong>Description</strong>
-      <p class="card-text"><%= @location.description %></p>
+      <p><img src="https://cdn-icons.flaticon.com/png/512/697/premium/697723.png?token=exp=1637329061~hmac=c2d503066f3d0183b479447619d9429d" alt="storage type symbol", class="icon-smallsymbol">
+      <%= @location.property_type.capitalize %></p>
+      <p class="card-text"> <img src="https://cdn-icons-png.flaticon.com/512/1356/1356321.png" alt="description type symbol", class="icon-smallsymbol">
+      <%= @location.description %></p>
     </div>
 
     <div class="card-location">
       <h5><strong>Location</strong></h5>
       <hr>
-      <p class="card-title"><%= @location.location_address %></p>
+      <p class="card-title"> <img src="https://cdn-icons-png.flaticon.com/512/446/446075.png" alt="location type symbol", class="icon-smallsymbol">
+      <%= @location.location_address %></p>
       <%# <div>
         <img class="img-card-show" src="https://s1.eestatic.com/2017/10/11/social/la_jungla_-_social_253487245_50033618_1706x960.jpg" alt="">
       </div> %>
-      <div id="map"
-     style="width: 800px; height: 550px; border-radius: 10px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+      <div class="map-showpagecontainer">
+        <div id="map"
+          style="width: 800px; height: 550px; border-radius: 10px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+       </div>
+      </div>
     </div>
   </div>
 
