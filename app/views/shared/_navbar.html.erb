@@ -30,8 +30,7 @@
         <li class="nav-item dropdown">
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://media-exp1.licdn.com/dms/image/C5603AQG6tX2U0Tmkbw/profile-displayphoto-shrink_800_800/0/1614945879239?e=1642636800&v=beta&t=Vvt3x0Tuf51Rte299FRBC7PLjBvVPpZvrh_HkYynuRk"/>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">See my dashboard</a>
-            <a class="dropdown-item" href="#">Change my avatar</a>
+            <%= link_to "Dashboard", dashboard_path, class: "dropdown-item"%>
             <%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
           </div>
         </li>

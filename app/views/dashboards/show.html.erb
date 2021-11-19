@@ -1,10 +1,11 @@
 
 <h1>Welcome to your dashboard</h1>
 
+<div class="container-dashboard">
 <h2>Your bookings</h2>
 <div class="card-grid">
 <% @bookings.each do |booking| %>
-<div class="confirmation-details">
+<div class="booking-card">
 <h5><%= booking.location.name %></h5>
 <p>Start Date: <%= booking.start_date %></p>
 <p>End Date: <%= booking.end_date %></p>
@@ -19,7 +20,7 @@
 <div class="card-grid">
 <% @bookings.each do |booking| %>
 <% if booking.pending? %>
-<div class="confirmation-details">
+<div class="booking-card">
 <h5><%= booking.user.email %></h5>
 <p>Start Date: <%= booking.start_date %></p>
 <p>End Date: <%= booking.end_date %></p>
@@ -30,4 +31,5 @@
 </div>
 <% end %>
 <% end %>
+</div>
 </div>
