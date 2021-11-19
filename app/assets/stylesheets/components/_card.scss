@@ -20,7 +20,7 @@
   flex-grow: 1;
   grid-template-columns: 1fr;
   grid-gap: 16px;
-  width: 1000px;
+  width: max-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
@@ -35,17 +35,23 @@
   width: 50%;
 }
 
-@media(max-width: 992px) {
-  .cards-index {
-    grid-template-columns: 1fr 1fr;
+@media only screen and (max-width: 960px) {
+  .cards-index{
+  grid-template-columns: 1fr ;
   }
 }
 
-@media(max-width: 768px) {
-  .cards-index {
-    grid-template-columns: 1fr;
+@media only screen and (min-width: 960px) {
+  .cards-index{
+  grid-template-columns: 1fr 1fr ;
   }
+}
 
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .cards-index{
+  grid-template-columns: 1fr 1fr 1fr;
+}
 }
 
 .storage-container{
@@ -139,7 +145,7 @@
 .card-body {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .price-card-index {
@@ -148,6 +154,7 @@
 
 .user-card-index {
   font-size: 10px;
+  margin: 0px;
 }
 
 #btn-card-index {

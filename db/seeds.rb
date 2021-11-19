@@ -35,7 +35,7 @@ end
 4.times do
   User.create!(
     email: Faker::Internet.email,
-    password: "a766868sf",
+    password: "123456",
     name: Faker::FunnyName.name,
     phone_number: Faker::PhoneNumber.phone_number,
     seller_type: ["professional", "personal"].sample
