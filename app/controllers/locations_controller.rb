@@ -31,8 +31,6 @@ class LocationsController < ApplicationController
     authorize @location
     if @location.save
       redirect_to locations_path
-    else
-      render :new
     end
   end
 
