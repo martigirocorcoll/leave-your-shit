@@ -15,9 +15,9 @@
         <li class="nav-item nav-linknormal">
           <%# <a class="my-link" href="/locations/new">Publish a storage</a> %>
           <% if current_user != nil %>
-          <button type="button" class="nav-button" data-toggle="modal" data-target="#exampleModalCenter">
-          Publish a storage
-          </button>
+            <button type="button" class="nav-button" data-toggle="modal" data-target="#exampleModalCenter">
+            Publish a storage
+            </button>
           <% end %>
         </li>
         <% if user_signed_in? == false %>
@@ -40,27 +40,5 @@
     </div>
   </div>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="popup-card modal-content">
-      <h1 style="text-align:center;">List your space!</h1>
-      <% location = Location.new %>
-      <%= simple_form_for(location) do |f| %>
-        <%= f.input :name %>
-        <%= f.input :property_type, :collection => %w[garage spare-room basement container shed attic warehouse office]  %>
-        <%= f.input :location_address %>
-        <%= f.input :description %>
-        <%= f.input :description, :as => :hidden, :input_html => {
-        :value => location.description,
-        :id => "new_storage"
-      } %>
-        <%= f.input :price, label: 'Hourly price($):' %>
-        <%= f.input :photo, as: :file  %>
-        <%= f.input :availability,     as: :radio_buttons, label: 'Available now?' %>
-        <div style="text-align:center;">
-        <%= f.submit class: "btn btn-primary"%>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+
+<%= render "shared/new_location_form" %>
