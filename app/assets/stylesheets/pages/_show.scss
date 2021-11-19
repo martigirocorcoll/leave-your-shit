@@ -11,9 +11,10 @@
 }
 
 .show-container {
-display: flex;
-align-items: center;
-align-items: flex-start;
+  display: flex;
+  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .booking-card {
@@ -46,7 +47,8 @@ align-items: flex-start;
 
 #title-show {
   padding-left: 150px;
-  color: white
+  color: white;
+  text-align: center;
 }
 
 .card-location {
