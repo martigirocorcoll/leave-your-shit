@@ -1,13 +1,15 @@
-<div class="confirmation-container">
-<h2>Your request was sent to the location owner!</h2>
-<h5><%= @booking.location.name %></h5>
-<div class="confirmation-details">
-<p>Start Date: <%= @booking.start_date %></p>
-<p>End Date: <%= @booking.end_date %></p>
-<p>Total days: <%= (@booking.end_date - @booking.start_date).to_i %></p>
-<p>Total price: $<%= @booking.agreed_price %></p>
-<p>Booking status: <%= @booking.status %></p>
+
+<div class="confirmation-container" data-aos="fade-up">
+  <h2>Your request was sent to the location owner!</h2>
+  <h5 class="h5-bookings"><i><%= @booking.location.name %></i></h5>
+    <div class="confirmation-details">
+      <p><b>Start Date:</b> <%= @booking.start_date %></p>
+      <p><b>End Date:</b> <%= @booking.end_date %></p>
+      <p><b>Total days:</b> <%= (@booking.end_date - @booking.start_date).to_i %></p>
+      <p><b>Total price:</b> €<%= @booking.agreed_price %></p>
+      <p><b>Booking status:</b> <i><%= @booking.status.capitalize %></i></p>
+    </div>
+    <%= link_to "Dashboard", dashboard_path, class: "btn-dashboard"  %>
+      <p>=======</p>
 </div>
-<div>
-<%= link_to "Dashboard", dashboard_path, class: "btn-index btn-flat"  %>
-</div>
+
