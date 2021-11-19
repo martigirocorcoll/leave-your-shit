@@ -18,6 +18,13 @@
 
 .booking-card {
   overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+}
+
+.booking-carddashboard {
+  overflow: hidden;
   height: 120px;
   width: 70%;
   background: white;
@@ -43,7 +50,6 @@
 }
 
 .container-dashboard{
-  padding-left: 30px;
   h1{
   text-align: center;
   margin: 40px;
@@ -57,3 +63,4 @@ h2{
 #papi {
   padding-bottom: 30px;
 }
+

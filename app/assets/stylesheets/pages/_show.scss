@@ -71,11 +71,19 @@
 }
 
 .btn-show {
-  background-color: #0542F1;
+   background-color: #008ab0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   border-style: none;
-  border-radius: 30px;
-  padding: 10px;
-  margin-top: 10px;
+  border-radius: 16px;
+  padding: 20px 30px 20px 30px;
+  width: 340px;
+  margin-top: 30px;
+
+
+&:hover {
+  background-color: #222222;
+   transition: 0.5;
+  }
+
 }
