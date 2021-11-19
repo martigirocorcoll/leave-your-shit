@@ -5,7 +5,7 @@
 <h2>Your bookings</h2>
 <div class="card-grid">
 <% @bookings.each do |booking| %>
-<div class="booking-card">
+<div class="booking-carddashboard">
 <h5><%= booking.location.name %></h5>
 <p>Start Date: <%= booking.start_date %></p>
 <p>End Date: <%= booking.end_date %></p>
@@ -33,6 +33,5 @@
   <% end %>
   <% end %>
   </div>
-
 <% end %>
 </div>

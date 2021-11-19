@@ -1,5 +1,5 @@
 .wind_head{
-  background-color: gray;
+  background-color:#008AB0;
   padding: 10px;
   border-radius: 3px;
   margin-top: 10px;
@@ -13,13 +13,17 @@
 }
 
 .wind_btn{
-  background-color: gray;
+  background-color: #008AB0;
   border-radius: 20px;
   text-decoration: none;
   color: white;
   padding: 10px;
   font-size: 18px;
 }
+
+.wind_btn:hover{
+    color: white;
+  }
 
 .wd_btn_container{
   text-align: center;
