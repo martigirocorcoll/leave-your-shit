@@ -10,14 +10,27 @@
   margin-top: 50px;
   border-radius: 5px;
   box-shadow: 5px 8px #c0bebe;
+}
   .confirmation-details{
     padding-top: 20px;
   }
+
   h5 {
     padding-top: 10px;
   }
-  .btn-index{
-    margin-right: 150px;
-    padding: 10px;
+
+  .btn-dashboard{
+  padding: 10px;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#167FFB, #0F60C4);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
   }
+
+  .btn-dashboard:hover {
+  background: linear-gradient(#147EFF, #0F67DA);
+  color: white;
 }
