@@ -42,13 +42,15 @@
   padding: 20px;
   display: flex;
   align-items: center;
-
+  position: relative;
+  top: -100px;
 }
 
 #title-show {
-  padding-left: 150px;
+  // padding-left: 150px;
   color: white;
   text-align: center;
+  text-shadow: 2px 2px 5px black;
 }
 
 .card-location {
