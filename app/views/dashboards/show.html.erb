@@ -1,8 +1,37 @@
 <div class="container-dashboard">
 <h1>Welcome to your dashboard</h1>
 
+<h2>Your locations</h2>
 
-<h2>Your bookings</h2>
+<% if !current_user.locations.empty? %>
+    <div class="cards-index" >
+      <% @locations.each do |location| %>
+        <div class="storage-container" style="width: 18rem;">
+          <div>
+            <% if location.photo.attached? %>
+              <div class="img-card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=rails_blob_url(location.photo)%>')">
+                <div class="card-title-index">
+                  <h5><%= location.name.split[0..4].join(' ') %></h5>
+                  <small><%= location.location_address.split[0..3].join(' ') %></small>
+                  <div id="btn-card-index">
+                    <%= link_to "See more", location_path(location), class: "btn-index btn-flat", id: "show"  %>
+                  </div>
+                </div>
+
+              </div>
+              <%# <%= cl_image_tag location.photo.key, height: 200, width: 300, crop: :fill, class:"miniphoto" %>
+            <% else %>
+              <img src="https://source.unsplash.com/random/250x200" alt="photo" class="miniphoto">
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+    </div>
+<% end %>
+
+
+<h2 id="papi">Your bookings</h2>
+
 <div class="card-grid">
 <% @bookings.each do |booking| %>
 <div class="booking-carddashboard">
