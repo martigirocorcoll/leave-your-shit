@@ -4,7 +4,11 @@
 <div class="map-cards">
 
     <div class="title-index">
-        <h2>Storages in <%= params[:query] %></h2>
+        <%if params[:query].present?%>
+          <h2>Storages in <%= params[:query] %></h2>
+        <%else %>
+          <h2>All storages</h2>
+        <%end%>
         <hr>
     </div>
 
