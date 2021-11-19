@@ -12,7 +12,7 @@
       <% @locations.each do |location| %>
 
         <div class="storage-container" style="width: 18rem;">
-        <div>
+          <div>
             <% if location.photo.attached? %>
               <div class="img-card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=rails_blob_url(location.photo)%>')">
                 <div class="card-title-index">
