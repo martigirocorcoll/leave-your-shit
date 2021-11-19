@@ -4,22 +4,22 @@
   color: white;
   width: 50%;
   font-size: large;
-  height: 500px;
   margin: auto;
   padding: 100px;
   margin-top: 50px;
   border-radius: 5px;
-  box-shadow: 5px 8px #c0bebe;
+  box-shadow: 5px 5px #c0bebe;
 }
-  .confirmation-details{
-    padding-top: 20px;
-  }
+.confirmation-details{
+  padding-top: 20px;
+}
 
-  h5 {
-    padding-top: 10px;
-  }
+.h5-bookings {
+  padding-top: 10px;
+}
 
-  .btn-dashboard{
+.btn-dashboard{
+
   padding: 10px;
   color: white;
   padding: 8px 24px;
@@ -28,7 +28,10 @@
   background: linear-gradient(#167FFB, #0F60C4);
   transition: background 0.3s ease;
   border: 1px solid #0F60C4;
+  a{
+    text-decoration: none;
   }
+}
 
   .btn-dashboard:hover {
   background: linear-gradient(#147EFF, #0F67DA);
